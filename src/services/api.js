@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const resolveApiBase = () => {
-  const envUrl = process.env.REACT_APP_API_URL;
-  if (envUrl) return envUrl;
   if (typeof window !== 'undefined') {
     const host = window.location.hostname;
     if (host.endsWith('vercel.app')) return '/api';
   }
+  const envUrl = process.env.REACT_APP_API_URL;
+  if (envUrl) return envUrl;
   return process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:8081/api';
 };
 const API_URL = resolveApiBase();
