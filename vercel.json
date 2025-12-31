@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://untributary-dodie-hyperaesthetic.ngrok-free.dev/api/$1"
+    }
+  ]
+}
